@@ -39,7 +39,7 @@ Observerが購読、Subjectが発行でしょうか。個人的には報連相�
 世の中にはいっぱいObserverパターンで考えられることがありそうです。
 
 ## Output
-![output](https://user-images.githubusercontent.com/12496951/134543589-9e351d76-2be6-4b32-987b-b3f2b31d6d75.png)
+![output](https://user-images.githubusercontent.com/12496951/134779793-fbee2d56-884c-4e70-a60a-2c0a2862c302.png)
 
 ## Dependency
 - MSVC 15+

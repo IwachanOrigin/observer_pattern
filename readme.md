@@ -27,7 +27,7 @@
 - ConcreteObserver(具体的な観察者)の役  
   ConcreteObserver役は具体的なObserver。  
   このプログラムでは、Observerは継承を行う前提で実装されている。  
-  そのため、オーバーライド先の「update」メソッドによって取るべき挙動を異なるものにすることができている。  
+  そのため、オーバーライド先の「update」メソッド毎に取るべき挙動を変化させている。  
   DigitObserverクラスとGraphObserverクラスが相当する。  
   DigitObserverでは数値を、GraphObserverでは「*」を出すプログラムとして異なる動きを実装している。  
   保持する情報を増やすことで様々な状態変化を行う仕組みを実装することも可能となる。すごい。

@@ -7,10 +7,10 @@
 class GraphObserver : public Observer
 {
 public:
-    explicit GraphObserver();
-    ~GraphObserver();
+  explicit GraphObserver();
+  ~GraphObserver();
 
-    void update(NumberGenerator &generator);
+  void update(NumberGenerator &generator);
 };
 
 #endif // GRAPH_OBSERVER_H_

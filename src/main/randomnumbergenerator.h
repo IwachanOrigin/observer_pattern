@@ -7,14 +7,14 @@
 class RandomNumberGenerator : public NumberGenerator
 {
 public:
-    explicit RandomNumberGenerator();
-    ~RandomNumberGenerator();
+  explicit RandomNumberGenerator();
+  virtual ~RandomNumberGenerator();
 
-    int number() override { return m_number; }
-    void execute() override;
+  int number() override { return m_number; }
+  void execute() override;
 
 private:
-    int m_number;
+  int m_number;
 };
 
 #endif

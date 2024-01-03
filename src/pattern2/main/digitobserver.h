@@ -8,9 +8,9 @@ class DigitObserver : public Observer
 {
 public:
   explicit DigitObserver();
-  ~DigitObserver();
+  virtual ~DigitObserver();
 
-  void update(NumberGenerator &observer) override;
+  void update(Subject* observer) override;
 };
 
 #endif // DIGIT_OBSERVER_H_

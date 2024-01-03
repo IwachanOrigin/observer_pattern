@@ -2,15 +2,15 @@
 #ifndef OBSERVER_H_
 #define OBSERVER_H_
 
-class NumberGenerator;
+class Subject;
 
 class Observer
 {
 public:
-  Observer();
-  virtual ~Observer();
+  explicit Observer() = default;
+  virtual ~Observer() = default;
 
-  virtual void update(NumberGenerator &observer) = 0;
+  virtual void update(Subject* observer) = 0;
 };
 
 #endif // OBSERVER_H_

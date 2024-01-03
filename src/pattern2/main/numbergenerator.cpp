@@ -1,8 +1,11 @@
 
 #include "observer.h"
 #include "numbergenerator.h"
+#include <random>
 
 NumberGenerator::NumberGenerator()
+  : Subject()
+  , m_number(0)
 {
 }
 
@@ -10,31 +13,15 @@ NumberGenerator::~NumberGenerator()
 {
 }
 
-void NumberGenerator::addObserver(Observer* observer)
+void NumberGenerator::execute()
 {
-  observers.push_back(observer);
-}
-
-void NumberGenerator::deleteObserver(Observer* observer)
-{
-  for (auto itr = observers.begin(); itr != observers.end();)
+  std::random_device rnd;
+  std::mt19937 mt(rnd());
+  std::uniform_int_distribution<> rand100(0, 99);
+  for (int i = 0; i < 20; i++)
   {
-    if (*itr == observer)
-    {
-      itr = observers.erase(itr);
-    }
-    else
-    {
-      itr++;
-    }
+    m_number = rand100(mt);
+    this->notifyObservers();
   }
 }
 
-void NumberGenerator::notifyObservers()
-{
-  for (int i = 0; i < observers.size(); i++)
-  {
-    Observer* obs = observers[i];
-    obs->update(*this);
-  }
-}

@@ -2,25 +2,21 @@
 #ifndef NUMBER_GENERATOR_H_
 #define NUMBER_GENERATOR_H_
 
+#include "subject.h"
 #include <vector>
+#include <memory>
 
-class Observer;
-
-class NumberGenerator
+class NumberGenerator : public Subject
 {
 public:
   explicit NumberGenerator();
   virtual ~NumberGenerator();
 
-  void addObserver(Observer* observer);
-  void deleteObserver(Observer* observer);
-  void notifyObservers();
-
-  virtual int number() = 0;
-  virtual void execute() = 0;
+  int number() const { return m_number; }
+  void execute();
 
 private:
-  std::vector<Observer*> observers;
+  int m_number;
 };
 
 #endif

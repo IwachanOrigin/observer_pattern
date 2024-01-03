@@ -1,18 +1,19 @@
 
-#include "randomnumbergenerator.h"
 #include "graphobserver.h"
 #include "digitobserver.h"
+#include "numbergenerator.h"
 #include <memory>
 
 int main(int argc, char* argv[])
 {
-  std::unique_ptr<NumberGenerator> generator(new RandomNumberGenerator());
-  GraphObserver graph = GraphObserver();
-  DigitObserver digit = DigitObserver();
+  NumberGenerator generator;
+  std::shared_ptr<GraphObserver> graph = std::make_shared<GraphObserver>();
+  std::shared_ptr<DigitObserver> digit = std::make_shared<DigitObserver>();
 
-  generator->addObserver(&graph);
-  generator->addObserver(&digit);
-  generator->execute();
+  generator.addObserver(graph);
+  generator.addObserver(digit);
+  generator.execute();
 
   return 0;
 }
+

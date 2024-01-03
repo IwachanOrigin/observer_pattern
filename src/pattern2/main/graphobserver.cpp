@@ -14,10 +14,11 @@ GraphObserver::~GraphObserver()
 {
 }
 
-void GraphObserver::update(NumberGenerator &generator)
+void GraphObserver::update(Subject* generator)
 {
   std::cout << "GraphObserver : ";
-  int count = generator.number();
+  auto numGen = static_cast<NumberGenerator*>(generator);
+  int count = numGen->number();
   for (int i = 0; i < count; i++)
   {
     std::cout << "*";

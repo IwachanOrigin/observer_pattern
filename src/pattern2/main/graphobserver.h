@@ -8,9 +8,10 @@ class GraphObserver : public Observer
 {
 public:
   explicit GraphObserver();
-  ~GraphObserver();
+  virtual ~GraphObserver();
 
-  void update(NumberGenerator &generator);
+  void update(Subject* generator);
 };
 
 #endif // GRAPH_OBSERVER_H_
+

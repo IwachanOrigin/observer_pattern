@@ -5,8 +5,8 @@ set(MAIN_SRC
   graphobserver.cpp
   graphobserver.h
   main.cpp
-  numbergenerator.cpp
-  numbergenerator.h
+  randomnumbergenerator.cpp
+  randomnumbergenerator.h
   observer.h
   subject.cpp
   subject.h

@@ -1,19 +1,19 @@
 
 #include "observer.h"
-#include "numbergenerator.h"
+#include "randomnumbergenerator.h"
 #include <random>
 
-NumberGenerator::NumberGenerator()
+RandomNumberGenerator::RandomNumberGenerator()
   : Subject()
   , m_number(0)
 {
 }
 
-NumberGenerator::~NumberGenerator()
+RandomNumberGenerator::~RandomNumberGenerator()
 {
 }
 
-void NumberGenerator::execute()
+void RandomNumberGenerator::execute()
 {
   std::random_device rnd;
   std::mt19937 mt(rnd());

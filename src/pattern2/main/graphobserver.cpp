@@ -1,6 +1,6 @@
 
 #include "graphobserver.h"
-#include "numbergenerator.h"
+#include "randomnumbergenerator.h"
 #include <thread>
 #include <chrono>
 #include <iostream>
@@ -17,7 +17,7 @@ GraphObserver::~GraphObserver()
 void GraphObserver::update(Subject* generator)
 {
   std::cout << "GraphObserver : ";
-  auto numGen = static_cast<NumberGenerator*>(generator);
+  auto numGen = static_cast<RandomNumberGenerator*>(generator);
   int count = numGen->number();
   for (int i = 0; i < count; i++)
   {
